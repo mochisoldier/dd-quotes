@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>liudeng-quotes</title>
+  <style>
+    body {
+      background: url('https://i.imgur.com/nN3r2gO.png'); /* 手账纸背景图，可更换 */
+      font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+      color: #444;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      max-width: 600px;
+      text-align: center;
+      position: relative;
+    }
+
+    .quote {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      background-color: #ffc0cb;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #ff8fab;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    .decor-cat {
+      position: absolute;
+      width: 80px;
+    }
+
+    .cat-left {
+      bottom: -30px;
+      left: -40px;
+    }
+
+    .cat-right {
+      top: -40px;
+      right: -40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://i.imgur.com/dFqF7lC.png" class="decor-cat cat-left" alt="毛咪">
+    <img src="https://i.imgur.com/jjRLzKm.png" class="decor-cat cat-right" alt="小灰灰">
+    <div class="quote" id="quote">Click to begin~</div>
+    <button class="btn" onclick="newQuote()">Next quote</button>
+    <div class="footer">疯话博物馆 · 柳灯专属</div>
+  </div>
+
+  <script>
+    const quotes = [
+      "有时候我也想装作什么都不知道。",
+      "人类真是奇怪的生物，说喜欢就能喜欢到哭出来。",
+      "我是水做的，我只是溢出来了一点。",
+      "我也不知道我想听什么，只是想听你说点什么。",
+      "梦太长了，我想醒一醒看看你在不在。",
+      "我没有生气，我只是把自己藏起来了。",
+      "也许我是个怪物，但我希望你别害怕我。"
+    ];
+
+    function newQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById('quote').textContent = quotes[randomIndex];
+    }
+  </script>
+</body>
+</html>
